@@ -1,0 +1,67 @@
+<h2>{{ data.id ? 'Edit User' : 'Add User' }}</h2>
+
+<form (ngSubmit)="dialogRef.close(data)">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="data.name" required>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="data.email" required>
+  </div>
+  <div>
+    <label for="aboutYou">About You</label>
+    <input type="text" id="aboutYou" name="aboutYou" [(ngModel)]="data.aboutYou">
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" [(ngModel)]="data.age">
+  </div>
+  <div>
+    <label for="termsAndCondition">Terms and Condition</label>
+    <input type="checkbox" id="termsAndCondition" name="termsAndCondition" [(ngModel)]="data.termsAndCondition">
+  </div>
+  <div>
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" [(ngModel)]="data.dob">
+  </div>
+  <div>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" [(ngModel)]="data.gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <input type="text" id="addLine1" name="addLine1" placeholder="Address Line 1" [(ngModel)]="data.address.addLine1">
+    <input type="text" id="addLine2" name="addLine2" placeholder="Address Line 2" [(ngModel)]="data.address.addLine2">
+    <input type="text" id="city" name="city" placeholder="City" [(ngModel)]="data.address.city">
+    <input type="text" id="state" name="state" placeholder="State" [(ngModel)]="data.address.state">
+    <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code" [(ngModel)]="data.address.zipCode">
+  </div>
+  <div>
+    <label for="language">Language</label>
+    <input type="text" id="language" name="language" [(ngModel)]="data.language">
+  </div>
+  <div>
+    <label for="mobNumber">Mobile Number</label>
+    <input type="tel" id="mobNumber" name="mobNumber" [(ngModel)]="data.mobNumber">
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="data.password">
+  </div>
+  <div>
+    <label for="uploadPhoto">Upload Photo</label>
+    <input type="file" id="uploadPhoto" name="uploadPhoto" [(ngModel)]="data.uploadPhoto" accept="image/*">
+  </div>
+  <div>
+    <label for="role">Role</label>
+    <input type="text" id="role" name="role" [(ngModel)]="data.role">
+  </div>
+  
+  <button mat-button type="button" (click)="onCancel()">Cancel</button>
+  <button mat-button type="submit">{{ data.id ? 'Save' : 'Add' }}</button>
+</form>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Generate Order</h1>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit(orderForm.value)" #orderForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Product Name" name="productName" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Quantity" name="quantity" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Customer Name" name="customerName" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" placeholder="Phone Number" name="phoneNumber" ngModel required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!orderForm.valid">Submit</button>
+    <button mat-button (click)="onClose()">Cancel</button>
+  </form>
+</div>
